@@ -1,0 +1,2 @@
+URL deployment: https://ml2-mathscore-ikhbarfirman.herokuapp.com/
+URL dataset: https://archive.ics.uci.edu/ml/datasets/Student+Performance

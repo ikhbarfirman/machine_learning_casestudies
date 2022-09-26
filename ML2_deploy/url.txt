@@ -1,2 +1,0 @@
-Data source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
-url deploy: https://frontend-ikhbarp2ml2.herokuapp.com/
