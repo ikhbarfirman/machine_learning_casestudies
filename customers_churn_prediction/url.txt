@@ -1,0 +1,2 @@
+URL dataset: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+URDL deployment: https://p2ml1-ikhbarfirman.herokuapp.com/
