@@ -1,0 +1,7 @@
+waitress
+pandas
+scikit-learn==1.1.1
+flask
+spotipy
+numpy
+scipy==1.8.1
