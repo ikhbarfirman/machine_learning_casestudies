@@ -1,51 +1,61 @@
-# IMDB MOVIE SENTIMENT ANALYSIS
+# USING MACHINE LEARNING TO PREDICT MATHEMATICS SCORES ON SECONDARY SCHOOL STUDENT
 
 Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 
-[Model deployment URL](https://frontend-ikhbarp2ml2.herokuapp.com/)
+[Model deployment URL](https://ml2-mathscore-ikhbarfirman.herokuapp.com/)
 
 <div align="center">
   <p>
     <a align="center">
-      <img width="550" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"></a>
+      <img width="550" src="https://odinland.vn/wp-content/uploads/2020/06/29.06-portugal.jpg"></a>
   </p>
 </div>  
 
 ## Problem Statement
 
-Movie reviews are an important way to gauge the performance of a movie. While providing a numerical/stars rating to a movie tells us about the success or failure of a movie quantitatively, a collection of movie reviews is what gives us a deeper qualitative insight on different aspects of the movie. We can classify whether a person liked the movie or not based on the review they give for the movie. This is particularly useful in cases when the creator of a movie wants to measure its overall performance using reviews that critics and viewers are providing for the movie. It can also be used to create a recommender by providing recommendation of movies to viewers on the basis of their previous reviews.
+Pendidikan merupakan salah satu faktor kunci untuk mencapai kemajuan ekonomi jangka panjang. Selama beberapa dekade terakhir (sebelum 2008), tingkat pendidikan Portugal menjadi lebih baik. Namun, berdasarkan statistik Portugal tetap masih tertinggal dibanding Eropa karena tingginya kegagalan siswa dan tingkat putus sekolah. Misalnya, pada tahun 2006 rate siswa meninggalkan sekolah dini di Portugal adalah 40% untuk usia 18 hingga 24 tahun, sedangkan rata-rata Uni Eropa nilainya hanya 15% (Eurostat 2007).
+
+Secara khusus, kegagalan di pelajaran inti Matematika dan Bahasa Portugal (Bahasa asal) sangatlah serius, karena kedua pelajaran tersebut dapat memberikan pengetahuan dasar untuk keberhasilan dalam berbagai mata pelajaran lainnya, misalnya fisika atau sejarah (Cortez and Silva 2008).
+
+Terdapat berbagai tindakan untuk mencegah hal tersebut, seperti menerapkan model pembelajaran yang cocok, pengaturan beban tugas ke siswa, mengubah cara pendekatan pada siswa atau pengadaan tambahan jam belajar. Namun tindakan tersebut harus dapat terlaksana terutama sebelum terlaksana ujian. Akan lebih baik apabila guru dapat memperkirakan atau memprediksi skor ujian siswa, untuk segera mengambil tindakan.
+
+### Dapatkah kita memprediksi performa belajar siswa terutama pada pelajaran matematika ??
 
 ## Objective
-- Predict sentiment of movie reviews
+- Pada studi kasus ini akan dilakukan prediksi nilai ujian siswa dari dua sekolah di Portugal yaitu Gabriel Pereira dan Mousinho da Silveira
 
 ## Data Description
-Dataset source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
+Dataset source: https://archive.ics.uci.edu/ml/datasets/Student+Performance
 
-- Data consists of 35000 samples of IMDB movie review from 2004-2021. 
-- Independent variables: 7 Categorical and 2 Numerical
-- Dependent Target variable: “Sentiment”
+Data set yang digunakan untuk pembuatan model prediksi ini adalah data siswa secondary education dari dua sekolah di Portugal yaitu Gabriel Pereira dan Mousinho da Silveira. Berbagai atribut data meliputi nilai ujian matematika, demographic, social dan berbagai informasi yang berkaitan dengan sekolah. Pengambilan data berdasarkan school reports dan kuisioner.
 
-Sentiment of a review here based on movie rating:
-- −1 : Negative sentiment for rating ≤4
-- 0    : Neutral sentiment for rating 5 or 6
-- 1    : Positive sentiment for rating ≥7
-<div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195546355-9ee9a165-f71e-45c1-8d44-cae1d9cc843f.png" width = 350\>
-</div>
+### Predictor Variable
+Variables yang digunakan untuk memprediksi nilai ujian siswa: school, sex, age address, dll
+
+### Target
+Target variables disini merupakan nilai first period, second priod, dan final grade siswa dari sekolah Gabriel Pereira atau Mousinho da Silveira.
+G1 - first period grade (numeric: from 0 to 20)
+
+G2 - second period grade (numeric: from 0 to 20)
+
+G3 - final grade (numeric: from 0 to 20, output target)
 
 ## Process
-<div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548084-00c3ff35-6fd8-4ebc-84a8-3bcf03f370b2.png" width = 750\>
-</div>
+Pada pengerjaan ini akan menerapkan 4 model yang berbeda untuk memprediksi target output G1 dan G2, yaitu:
+
+1. Linear Regression
+2. Lasso dan Ridge Regression
+3. XGB
+4. SVR
+
+Selanjutnya kita akan membuat model untuk predict G3 dengan memasukkan G1 dan G2 sebagai variables input dikarenakan G1 dan G2 mempunyai korelasi yang sangat kuat terhadap G3. Model yang digunakan disini adalah Linear Regression. Dan untuk finalisasinya kita akan memakai hasil predict G1 dan G2 (yang terbaik keempat model) untuk membuat predict G3.
+
+Metrics yang digunakan disini adalah mean_absolute_error, dimana mean_absolute_error akan mencari mean dari absolute difference antara aktual dan prediksi output target.
+
+Untuk informasi lebih detail dapat dilihat pada **h8dsft_Milestone2P1_ikhbar_firman.ipynb**.
 
 ## DEMO PROGRAM!
-Please check this [URL model deployment](https://frontend-ikhbarp2ml2.herokuapp.com/) to run the model program
+Please check this [URL model deployment](https://ml2-mathscore-ikhbarfirman.herokuapp.com/) to run the model program
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548610-52322a4f-f512-4772-b73c-74eca4b20a62.png" width = 750\>
+<img src = "https://user-images.githubusercontent.com/108855393/195716413-a0d5ecff-dc75-4e62-bad7-c445a0369b87.png" width = 750\>
 </div>
-
-## References
-- https://chaitanya1731.github.io/img/prj-1/report.pdf
-- http://www.lnse.org/papers/134-I3007.pdf
-- https://www.researchgate.net/publication/347287055_Determining_the_Number_of_Neurons_in_Artificial_Neural_Networks_for_Approximation_Trained_with_Algorithms_Using_the_Jacobi_Matrix
-- https://arxiv.org/pdf/1502.03167.pdf
