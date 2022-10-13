@@ -1,51 +1,43 @@
-# IMDB MOVIE SENTIMENT ANALYSIS
+# TELCO CUSTOMERS CHURN PREDICTION!
 
 Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 
-[Model deployment URL](https://frontend-ikhbarp2ml2.herokuapp.com/)
+[Model deployment URL](https://p2ml1-ikhbarfirman.herokuapp.com/)
 
 <div align="center">
   <p>
     <a align="center">
-      <img width="550" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"></a>
+      <img width="450" src="https://www.tibco.com/blog/wp-content/uploads/2013/04/telco-churn.jpg"></a>
   </p>
 </div>  
 
 ## Problem Statement
 
-Movie reviews are an important way to gauge the performance of a movie. While providing a numerical/stars rating to a movie tells us about the success or failure of a movie quantitatively, a collection of movie reviews is what gives us a deeper qualitative insight on different aspects of the movie. We can classify whether a person liked the movie or not based on the review they give for the movie. This is particularly useful in cases when the creator of a movie wants to measure its overall performance using reviews that critics and viewers are providing for the movie. It can also be used to create a recommender by providing recommendation of movies to viewers on the basis of their previous reviews.
+Customers churn refers to the amount of customers of a given company that stop using products or services during a certain time frame. At this time Telecom companies face major challenge with customer churn, as customers switch to alternate provider due to various reasons like lower cost, multi (combo) service offerings, marketing promotions by competitors, etc. Identifying these potential customers early on who may voluntarily churn and providing them retention incentives in form of discounts & combo offers will help the organization to retain those customers and reduce revenue loss. 
 
 ## Objective
-- Predict sentiment of movie reviews
+- Predict potential customers who may voluntarily churn
 
 ## Data Description
-Dataset source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
+Dataset source: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
 
-- Data consists of 35000 samples of IMDB movie review from 2004-2021. 
-- Independent variables: 7 Categorical and 2 Numerical
-- Dependent Target variable: “Sentiment”
+- Data consists of 7043 customers who belong to various demographics (single; with dependents; senior citizen) and subscribe to different products offerings (internet service; phone line; streaming TV; streaming movies; online security) from a telecom company located in one of the US states.
+- Independent variables: 17 Categorical and 3 Numerical
+- Dependent Target variable: “Churn”
 
-Sentiment of a review here based on movie rating:
-- −1 : Negative sentiment for rating ≤4
-- 0    : Neutral sentiment for rating 5 or 6
-- 1    : Positive sentiment for rating ≥7
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195546355-9ee9a165-f71e-45c1-8d44-cae1d9cc843f.png" width = 350\>
+<img src = "https://user-images.githubusercontent.com/108855393/195709754-27720e1b-9f13-42f3-9042-3ac47d93d3f6.png" width = 500\>
 </div>
 
 ## Process
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548084-00c3ff35-6fd8-4ebc-84a8-3bcf03f370b2.png" width = 750\>
+<img src = "https://user-images.githubusercontent.com/108855393/195710083-a416a276-2d37-4623-9475-bbdcedba6ac5.png" width = 750\>
 </div>
+
+Dari dataset disini kita akan melakukan prediksi terhadap customer terkait kecenderungan customer akan berhenti berlangganan atau tidak. Untuk melakukan prediksi ini diterapkan model ANN sequential API dan functional API dimana kita membuat dua model yang berbeda baik pada sequential dan functional. Prioritas pada prediksi ini adalah meminimalisir jumlah customer yang terprediksi masih loyal sedangkan customer tersebut mempunyai niat untuk berhenti berlangganan, atau dengan kata lain kita ingin membuat jumlah false negative sekecil mungkin (dimana positive disini menandakan customer berhenti berlangganan churn = 'Yes'). Sehingga orientasi saat proses training model mengacu pada recall score, selain itu kita juga mengatur class weight dominan ke kelas 1 (churn = 'Yes') dikarenakan dataset tergolong imbalanced dimana proporsi jumlah customer yang masih loyal lebih banyak dibanding customer yang telah berhenti berlangganan. Konsekuens dari hal tersebut adalah penurunan terhadap precision ataupun jumlah false positive yang meningkat. Hal tersebut menurut saya pribadi tidak menjadi suatu masalah. Anggaplah customer yang terprediksi berhenti berlangganan akan diberlakukan berbagai promosi seperti discount ataupun berbagai benefit tambahan lainnya atau memperbaiki kualitas pelayanan. Customer dengan false positive, atau customer yang terprediksi berhenti berlangganan sedangkan sebenarnya tidak merupakan customer yang beruntung karena dikenakan benefit tersebut. Meskipun mungkin akan terjadi penurunan revenue karena semakin banyak customer yang diterapkan benefit tersesbut, namn secara jangka panjangnya kemungkinan besar perusahaan masih dapat mempertahankan banyak customer untuk tetap berlangganan.
 
 ## DEMO PROGRAM!
-Please check this [URL model deployment](https://frontend-ikhbarp2ml2.herokuapp.com/) to run the model program
+Please check this [URL model deployment](https://p2ml1-ikhbarfirman.herokuapp.com/) to run the model program
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548610-52322a4f-f512-4772-b73c-74eca4b20a62.png" width = 750\>
+<img src = "https://user-images.githubusercontent.com/108855393/195710479-107d3ce7-78db-4306-871a-f72fb601694e.png" width = 750\>
 </div>
-
-## References
-- https://chaitanya1731.github.io/img/prj-1/report.pdf
-- http://www.lnse.org/papers/134-I3007.pdf
-- https://www.researchgate.net/publication/347287055_Determining_the_Number_of_Neurons_in_Artificial_Neural_Networks_for_Approximation_Trained_with_Algorithms_Using_the_Jacobi_Matrix
-- https://arxiv.org/pdf/1502.03167.pdf
