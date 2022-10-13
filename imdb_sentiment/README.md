@@ -1,5 +1,4 @@
 # IMDB MOVIE SENTIMENT ANALYSIS
-Hacktiv8 Final Project FTDS batch 14 group 03
 
 Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 
