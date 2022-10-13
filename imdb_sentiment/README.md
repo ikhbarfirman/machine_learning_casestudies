@@ -1,68 +1,52 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8611383&assignment_repo_type=AssignmentRepo)
-# REAL-TIME LOGO DETECTION USING YOLOV5!
+# IMDB MOVIE SENTIMENT ANALYSIS
 Hacktiv8 Final Project FTDS batch 14 group 03
 
-Created by [Faisal Kengo](https://github.com/FaisalKengo) & [Ikhbar Firman](https://github.com/ikhbarfirman)
+Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
+
+[Model deployment URL](https://frontend-ikhbarp2ml2.herokuapp.com/)
+
 <div align="center">
   <p>
     <a align="center">
-      <img width="550" src="https://github.com/H8-Assignments-Bay/p2---final-project-ftds-014-rmt-group-003/blob/main/assets/pngaaa.com-3594055.png"></a>
+      <img width="550" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"></a>
   </p>
 </div>  
 
+## Problem Statement
 
-## Background
- 
-Companies pay astonishing amounts of money to sponsor events  and raise brand visibility. Event sponsoring and social media is a well-established marketing strategy to build brand awareness.  
-- There are 72% of consumers positively view brands that provide them with positive experiences, such as a great sports game or music festival. [(eventmarketer study)](https://www.eventmarketer.com/wp-content/uploads/2016/05/2016EventTrackExecSummary.pdf)
-- According to [Harvard researchers](https://www.inc.com/logan-chierotti/harvard-professor-says-95-of-purchasing-decisions-are-subconscious.html), about 90% of purchasing decisions are subconscious. So, the higher is brand visibility for communities on the web, the more impact a brand has on consumer buying activity.
-- Chevrolet pays $71.4 million dollars each year to put its brand on Manchester United shirts. [(brandwatch)](https://www.brandwatch.com/blog/how-to-measure-brand-awareness/)
+Movie reviews are an important way to gauge the performance of a movie. While providing a numerical/stars rating to a movie tells us about the success or failure of a movie quantitatively, a collection of movie reviews is what gives us a deeper qualitative insight on different aspects of the movie. We can classify whether a person liked the movie or not based on the review they give for the movie. This is particularly useful in cases when the creator of a movie wants to measure its overall performance using reviews that critics and viewers are providing for the movie. It can also be used to create a recommender by providing recommendation of movies to viewers on the basis of their previous reviews.
 
-The logo detection technology allows scanning images and real-time video streams for logos to get real uses of products by customers, facilitate monitoring the ROI of marketing campaigns, ensure revenue boost, and more.
+## Objective
+- Predict sentiment of movie reviews
 
-### WHY detect logo??
+## Data Description
+Dataset source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
+
+- Data consists of 35000 samples of IMDB movie review from 2004-2021. 
+- Independent variables: 7 Categorical and 2 Numerical
+- Dependent Target variable: “Sentiment”
+
+Sentiment of a review here based on movie rating:
+- −1 : Negative sentiment for rating ≤4
+- 0    : Neutral sentiment for rating 5 or 6
+- 1    : Positive sentiment for rating ≥7
 <div align="center">
-  <p>
-    <a align="center">
-      <img width="350" src="https://github.com/H8-Assignments-Bay/p2---final-project-ftds-014-rmt-group-003/blob/main/assets/cocacola_logo_detect.jpg"></a>
-  </p>
-</div>  
-
-Accurate logo recognition in images can have multiple applications.
-- Digital piracy monitoring
-- Ad monitoring platforms
-- Copyright & trademark compliance
-- Sponsorship monitoring
-
-Here an example of logo detection from our model.
-
-COCA – COLA Logo detection on event:  “Taste The Feeling Festival” 
-(February 2016, Manila, Philippines)
-
-<div align="center">
-  <p>
-    <a align="center">
-      <img width="550" src="https://github.com/H8-Assignments-Bay/p2---final-project-ftds-014-rmt-group-003/blob/main/assets/cocacola_detect.gif"></a>
-  </p>
+<img src = "https://user-images.githubusercontent.com/108855393/195546355-9ee9a165-f71e-45c1-8d44-cae1d9cc843f.png" width = 350\>
 </div>
 
-Source: https://www.youtube.com/watch?v=JrWEyP6nlOY
+## Process
+<div align="center">
+<img src = "https://user-images.githubusercontent.com/108855393/195548084-00c3ff35-6fd8-4ebc-84a8-3bcf03f370b2.png" width = 750\>
+</div>
 
 ## DEMO PROGRAM!
-Please check this [note tutorial](https://github.com/H8-Assignments-Bay/p2---final-project-ftds-014-rmt-group-003/blob/main/run_model_local.txt) to run the model program
-
+Please check this [URL model deployment](https://frontend-ikhbarp2ml2.herokuapp.com/) to run the model program
 <div align="center">
-  <p>
-    <a align="center">
-      <img width="550" src="https://github.com/H8-Assignments-Bay/p2---final-project-ftds-014-rmt-group-003/blob/main/assets/model_tutorial.gif"></a>
-  </p>
+<img src = "https://user-images.githubusercontent.com/108855393/195548610-52322a4f-f512-4772-b73c-74eca4b20a62.png" width = 750\>
 </div>
 
-# References
-- https://github.com/ultralytics/yolov5/
-- https://www.kaggle.com/code/rohitgadhwar/face-mask-detection-yolov5
-- https://visua.com/technology/logo-detection-api
-- https://link.springer.com/chapter/10.1007/978-3-319-08010-9_86
-- https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9502074
-- https://indatalabs.com/blog/how-does-logo-detection-work
-- https://deepsense.ai/logo-detection-and-brand-visibility-analytics-example/
+## References
+- https://chaitanya1731.github.io/img/prj-1/report.pdf
+- http://www.lnse.org/papers/134-I3007.pdf
+- https://www.researchgate.net/publication/347287055_Determining_the_Number_of_Neurons_in_Artificial_Neural_Networks_for_Approximation_Trained_with_Algorithms_Using_the_Jacobi_Matrix
+- https://arxiv.org/pdf/1502.03167.pdf
