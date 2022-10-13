@@ -1,4 +1,4 @@
-# IMDB MOVIE SENTIMENT ANALYSIS
+# Analisa Kualitas Udara pada Negara Bagian Amerika Serikat
 
 Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 
@@ -7,45 +7,39 @@ Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 <div align="center">
   <p>
     <a align="center">
-      <img width="550" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"></a>
+      <img width="550" src="https://camo.githubusercontent.com/45ee38bc4f423575c307dd3e769a97276ef2c02fa6c8c809b847351860f09da4/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f312f31342f4169725f506f6c6c7574696f6e2d436175736573253236456666656374732e7376672f3130353270782d4169725f506f6c6c7574696f6e2d436175736573253236456666656374732e7376672e706e67"></a>
   </p>
 </div>  
 
 ## Problem Statement
 
-Movie reviews are an important way to gauge the performance of a movie. While providing a numerical/stars rating to a movie tells us about the success or failure of a movie quantitatively, a collection of movie reviews is what gives us a deeper qualitative insight on different aspects of the movie. We can classify whether a person liked the movie or not based on the review they give for the movie. This is particularly useful in cases when the creator of a movie wants to measure its overall performance using reviews that critics and viewers are providing for the movie. It can also be used to create a recommender by providing recommendation of movies to viewers on the basis of their previous reviews.
+Kementerian Lingkungan Hidup Amerika Serikat ingin membuat regulasi mengenai emisi industri dan kendaraan bermotor yang kini sangat merusak kualitas udara di negara tersebut. Namun untuk membuat regulasi tersebut, harus diketahui kondisi kualitas udara saat ini di berbagai negara bagian agar mudah menentukan negara bagian mana saja yang harus diterapkan regulasi tersebut terlebih dahulu.
+
+Untuk memantau kondisi kualitas udara yang dihirup manusia, Badan Perlindungan Lingkungan Amerika Serikat (EPA) membuat sebuah ukuran yang disebut Indeks Kualitas Udara atau **Air Quality Index (AQI)** yang menggambarkan konsentrasi polusi udara di satu daerah. Bagi masyarakat umum, AQI dapat berperan sebagai tanda peringatan akan polusi udara yang ikut terhirup sehari-hari. Dengan begitu, kita dapat melakukan langkah mitigasi dan pencegahan. Bagaimanapun, polusi udara yang terakumulasi dalam tubuh dapat berbahaya jika di biarkan dalam jangka panjang
 
 ## Objective
-- Predict sentiment of movie reviews
+1. Mengetahui perubahan kadar tiap pollutant di berbagai tahun
+2. Mengetahui hubungan parameter cuaca dengan kadar pollutant
+3. Mengetahui negara bagian manakah yang cenderung memiliki kadar pollutant yang besar di berbagai tahun
+4. Mengetahui kualitas udara tiap berbagai negara bagian dengan kriteria AQI pada tahun 2021
+5. Mengetahui keadaan kualitas udara Amerika Serikat secara keseluruhan pada tahun 2021
+6. Mengetahui terdapat pengaruh signifikan antara daerah perkotaan dengan pedesaan.
 
 ## Data Description
-Dataset source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
+Data yang digunakan disini didapat dari database 'epa_historical_air_quality' menggunakan bigquery-public-data pada Google Cloud Big Query dengan kriteria sebagai berikut:
 
-- Data consists of 35000 samples of IMDB movie review from 2004-2021. 
-- Independent variables: 7 Categorical and 2 Numerical
-- Dependent Target variable: “Sentiment”
+- Berisi kolom dengan informasi state name, county name, year, pollutants, units of meassure, annual average pollutant concentatrion, annual average first max pollutant concetration value.
+- Parameter Occurrence Code (POC) adalah 1.
+- Dari tahun 2011 hingga 2021.
 
-Sentiment of a review here based on movie rating:
-- −1 : Negative sentiment for rating ≤4
-- 0    : Neutral sentiment for rating 5 or 6
-- 1    : Positive sentiment for rating ≥7
+## Data Visualization
+Please check this [Dashboard](https://frontend-ikhbarp2ml2.herokuapp.com/)
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195546355-9ee9a165-f71e-45c1-8d44-cae1d9cc843f.png" width = 350\>
-</div>
-
-## Process
-<div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548084-00c3ff35-6fd8-4ebc-84a8-3bcf03f370b2.png" width = 750\>
-</div>
-
-## DEMO PROGRAM!
-Please check this [URL model deployment](https://frontend-ikhbarp2ml2.herokuapp.com/) to run the model program
-<div align="center">
-<img src = "https://user-images.githubusercontent.com/108855393/195548610-52322a4f-f512-4772-b73c-74eca4b20a62.png" width = 750\>
+<img src = "https://user-images.githubusercontent.com/108855393/195713621-308ab0c1-3d8c-4093-9d4d-c71491d25bfa.png" width = 750\>
 </div>
 
 ## References
-- https://chaitanya1731.github.io/img/prj-1/report.pdf
-- http://www.lnse.org/papers/134-I3007.pdf
-- https://www.researchgate.net/publication/347287055_Determining_the_Number_of_Neurons_in_Artificial_Neural_Networks_for_Approximation_Trained_with_Algorithms_Using_the_Jacobi_Matrix
-- https://arxiv.org/pdf/1502.03167.pdf
+- https://www.idntimes.com/health/fitness/alfonsus-adi-putra-2/memahami-indeks-kualitas-udara-atau-air-quality-index?page=all
+- https://www.kcur.org/news/2022-01-31/the-air-in-rural-areas-may-be-just-as-toxic-as-the-pollution-in-cities
+- https://www.epa.gov/
+- https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
