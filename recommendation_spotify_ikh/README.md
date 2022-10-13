@@ -28,7 +28,8 @@ Please check this [Model deployment URL](https://recommendation-music-ikh.heroku
     <a align="center">
       <img width="750" src="https://github.com/ikhbarfirman/machine_learning_casestudies/blob/main/recommendation_spotify_ikh/assets/tutorial.png"></a>
   </p>
-</div>                                                                                                                                    
+</div>
+
 - Durasi pencarian rekomendasi lagu dan artist sekitar 5-8 detik (tergantung koneksi). Kemudian akan keluar hasil rekomendasi artist dan lagu.
 <div align="center">
   <p>
