@@ -2,7 +2,7 @@
 
 Created by [Ikhbar Firman](https://github.com/ikhbarfirman)
 
-[Model deployment URL](https://frontend-ikhbarp2ml2.herokuapp.com/)
+[Model deployment URL](https://ikhbar-firman-ftds-014-p0m1.herokuapp.com/)
 
 <div align="center">
   <p>
